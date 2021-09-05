@@ -4,9 +4,7 @@ namespace Eawase.Util
 {
     public static class IEnumerableExtension
     {
-        public static bool IsAllSame<T>(
-            this IEnumerable<T> enumerable
-        )
+        public static bool IsAllSame<T>(this IEnumerable<T> enumerable)
         {
             var isFirst = true;
             T target = default;

@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using Eawase.Entity;
+using Eawase.Util;
 using UnityEngine;
 
 namespace Eawase.UI.Main
@@ -8,7 +10,7 @@ namespace Eawase.UI.Main
     {
         public Stage Execute(int xSize, int ySize)
         {
-            var cards = GenerateCards(xSize, ySize);
+            var cards = GenerateCards(xSize, ySize).ToList().Shuffle();
             var stage = new Stage();
             stage.SetUp(xSize, ySize, cards);
             return stage;
@@ -18,6 +20,7 @@ namespace Eawase.UI.Main
         {
             var size = xSize * ySize;
             var result = new Card[size];
+
             for (var i = 0; i < size / 2; i++)
             {
                 var offset = i * 2;
