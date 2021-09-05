@@ -1,11 +1,9 @@
 using Cysharp.Threading.Tasks;
-using Eawase.Application.Page.Struct;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityHooks;
-using UnityHooks.Input;
 
-namespace Eawase.Application.Page.Binder
+namespace UnityHooksLibrary.Page
 {
     [RequireComponent(typeof(Button))]
     public class PagePopButtonBinder : MonoBehaviour

@@ -1,17 +1,18 @@
 using System.Collections.Generic;
+using UnityHooksLibrary.Page;
 
 namespace Eawase.Application.Configuration
 {
     public class Pages
     {
-        private static readonly IReadOnlyDictionary<string, Page.Struct.Page> pageMap =
-            new Dictionary<string, Page.Struct.Page>()
+        private static readonly IReadOnlyDictionary<string, Page> pageMap =
+            new Dictionary<string, Page>()
             {
-                { "Title", new Page.Struct.Page("Title", "Title") },
-                { "Main", new Page.Struct.Page("Main", "Main") },
+                { "Title", new Page("Title", "Title") },
+                { "Main", new Page("Main", "Main") },
             };
 
-        public static Page.Struct.Page Title => pageMap["Title"];
-        public static Page.Struct.Page Main => pageMap["Main"];
+        public static Page Title => pageMap["Title"];
+        public static Page Main => pageMap["Main"];
     }
 }

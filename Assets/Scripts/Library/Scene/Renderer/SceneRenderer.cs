@@ -3,8 +3,7 @@ using System.Linq;
 using Cysharp.Threading.Tasks;
 using UnityEngine.SceneManagement;
 
-// TODO: export this renderer as library
-namespace Eawase.Common.Scene.Renderer
+namespace UnityHooksLibrary.Scene
 {
     public class SceneRenderer
     {

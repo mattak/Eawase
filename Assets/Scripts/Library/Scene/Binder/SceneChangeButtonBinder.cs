@@ -1,11 +1,10 @@
-using Eawase.Common.Scene.Struct;
 using UniRx;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityHooks;
 using UnityHooks.Input;
 
-namespace Eawase.Common.Scene.Binder
+namespace UnityHooksLibrary.Scene
 {
     [RequireComponent(typeof(ButtonInput))]
     public class SceneChangeButtonBinder : MonoBehaviour

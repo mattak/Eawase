@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityHooks;
 
-namespace Eawase.Common.Scene.Struct
+namespace UnityHooksLibrary.Scene
 {
     public static class SceneHookKeys
     {

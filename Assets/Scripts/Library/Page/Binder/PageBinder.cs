@@ -1,10 +1,9 @@
-using Eawase.Application.Page.Struct;
-using Eawase.Common.Scene.Struct;
 using UniRx;
 using UnityEngine;
 using UnityHooks;
+using UnityHooksLibrary.Scene;
 
-namespace Eawase.Application.Page.Binder
+namespace UnityHooksLibrary.Page
 {
     public class PageBinder : MonoBehaviour
     {
@@ -26,7 +25,7 @@ namespace Eawase.Application.Page.Binder
                 .AddTo(this);
         }
 
-        private void Render(Struct.Page page)
+        private void Render(Page page)
         {
             var hook = Hooks.UseState(SceneHookKeys.SCENES);
             hook.Update(page.scenes);

@@ -1,6 +1,6 @@
 using System;
 
-namespace Eawase.Application.Page.Struct
+namespace UnityHooksLibrary.Page
 {
     [Serializable]
     public class Page

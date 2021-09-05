@@ -1,10 +1,8 @@
-using Eawase.Common.Scene.Renderer;
-using Eawase.Common.Scene.Struct;
 using UniRx;
 using UnityEngine;
 using UnityHooks;
 
-namespace Eawase.Common.Scene.Binder
+namespace UnityHooksLibrary.Scene
 {
     public class SceneBinder : MonoBehaviour
     {

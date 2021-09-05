@@ -3,6 +3,7 @@ using Eawase.Entity;
 using UniRx;
 using UnityEngine;
 using UnityHooks;
+using UnityHooksLibrary.Renderer;
 
 namespace Eawase.UI.Main
 {
@@ -19,11 +20,6 @@ namespace Eawase.UI.Main
 
             Initialize(stageHook);
 
-            stageHook.Value
-                .Where(x => x != null)
-                .Where(x => x.IsAllFlipped())
-                .Subscribe(_ => UnityEngine.Debug.Log("Congratulations!!"))
-                .AddTo(this);
             stageHook.Value
                 .Where(x => x != null)
                 .Select(x => x.cards)

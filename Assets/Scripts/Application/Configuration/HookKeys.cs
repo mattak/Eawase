@@ -9,5 +9,10 @@ namespace Eawase.Common.Configuration
             "cards",
             null
         );
+
+        public static readonly HookKey<bool> TapProtect = new HookKey<bool>(
+            "tap_protection",
+            false
+        );
     }
 }

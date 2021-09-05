@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityHooks;
 
-namespace Eawase.Application.Page.Struct
+namespace UnityHooksLibrary.Page
 {
     public static class PageHookKeys
     {

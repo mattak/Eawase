@@ -1,12 +1,11 @@
-using Eawase.Application.Page.Struct;
 using UnityEngine;
 using UnityHooks;
 
-namespace Eawase.Application.Page.Binder
+namespace UnityHooksLibrary.Page
 {
     public class PageInitBinder : MonoBehaviour
     {
-        [SerializeField] private Struct.Page page = default;
+        [SerializeField] private Page page = default;
 
         private void Start()
         {

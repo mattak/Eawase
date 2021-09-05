@@ -1,15 +1,14 @@
 using Cysharp.Threading.Tasks;
-using Eawase.Application.Page.Struct;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityHooks;
 
-namespace Eawase.Application.Page.Binder
+namespace UnityHooksLibrary.Page
 {
     [RequireComponent(typeof(Button))]
     public class PagePushButtonBinder : MonoBehaviour
     {
-        [SerializeField] private Struct.Page page = default;
+        [SerializeField] private Page page = default;
         
         private void Start()
         {

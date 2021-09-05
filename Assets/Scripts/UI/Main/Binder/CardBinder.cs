@@ -32,20 +32,24 @@ namespace Eawase.UI.Main
 
         private async UniTask SelectCard(Card card)
         {
-            UnityEngine.Debug.Log($"Select: {card.id}");
-            var stage = Hooks.UseState(HookKeys.Stage);
+            var tapProtectionHook = Hooks.UseState(HookKeys.TapProtect);
+            tapProtectionHook.Update(true);
+
+            var stageHook = Hooks.UseState(HookKeys.Stage);
             var useCase = new FlipCardUseCase();
-            var result = useCase.Execute(stage.Current, card);
-            stage.Update(stage.Current);
+            var result = useCase.Execute(stageHook.Current, card);
+            stageHook.Update(stageHook.Current);
 
             if (result.isFlippingEnd)
             {
                 // a little bit waiting until reset
                 if (!result.isSuccess) await UniTask.Delay(TimeSpan.FromSeconds(2f));
 
-                stage.Current.ResetFlipList(result.isSuccess);
-                stage.Update(stage.Current);
+                stageHook.Current.ResetFlipList(result.isSuccess);
+                stageHook.Update(stageHook.Current);
             }
+
+            tapProtectionHook.Update(false);
         }
     }
 }
