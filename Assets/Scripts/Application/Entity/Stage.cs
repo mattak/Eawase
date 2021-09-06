@@ -24,6 +24,8 @@ namespace Eawase.Entity
             }
         }
 
+        public Card GetCard(int id) => _cardMap[id];
+
         public int GetRemainCardCount()
         {
             return _cardMap

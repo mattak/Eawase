@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using Eawase.Entity;
 using UnityEngine;
-using UnityEngine.Assertions;
 
 namespace Eawase.UI.Main
 {
@@ -9,11 +7,11 @@ namespace Eawase.UI.Main
     {
         [SerializeField] private CardBinder[] binders = default;
 
-        public void Render(IReadOnlyList<Card> cards)
+        public void Render(Stage stage)
         {
-            for (var i = 0; i < cards.Count; i++)
+            for (var i = 0; i < stage.xSize * stage.ySize; i++)
             {
-                binders[i].Bind(cards[i]);
+                binders[i].Bind(stage.GetCard(i));
             }
         }
     }

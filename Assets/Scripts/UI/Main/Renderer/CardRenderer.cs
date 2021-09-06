@@ -20,5 +20,15 @@ namespace Eawase.UI.Main
             this.card = card; // for debug
             this.image.color = card.isOpened ? card.type.color : Color.gray;
         }
+
+        public void RenderForceOpen()
+        {
+            this.image.color = card.type.color;
+        }
+        
+        public void RenderForceClose()
+        {
+            this.image.color = Color.grey;
+        }
     }
 }

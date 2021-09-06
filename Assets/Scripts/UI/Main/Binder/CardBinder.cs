@@ -16,18 +16,29 @@ namespace Eawase.UI.Main
 
         private Card card = default;
 
+        public CardRenderer CardRenderer => renderer;
+
         private void Start()
         {
             input.pressedAsObservable
                 .Where(_ => card != null)
-                .Subscribe(_ => this.SelectCard(this.card))
+                .Subscribe(_ => SelectCard(this.card))
                 .AddTo(this);
         }
 
         public void Bind(Card card)
         {
-            this.card = card;
-            renderer.Render(card);
+            var stage = Hooks.UseState(HookKeys.Stage);
+            var id = card.id;
+            stage.Value
+                .Where(x => x != null)
+                .Select(x => x.GetCard(id))
+                .Subscribe(x =>
+                {
+                    this.card = card;
+                    renderer.Render(card);
+                })
+                .AddTo(this);
         }
 
         private async UniTask SelectCard(Card card)
